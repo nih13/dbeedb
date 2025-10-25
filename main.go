@@ -25,5 +25,7 @@ func main() {
 	fruits.Set("b", "mango")
 	fmt.Println(fruits.Get("b"))
 	fruits.Print()
+	fruits.Delete("b")
+	fruits.Print()
 
 }

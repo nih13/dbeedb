@@ -32,4 +32,8 @@ func (d dbeedb) Print() {
 	fmt.Println(d.db)
 }
 
+func (d dbeedb) Delete(key string) {
+	delete(d.db, key)
+}
+
 //["a":"apple", "b":"mango"]

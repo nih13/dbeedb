@@ -1,6 +1,6 @@
 module github.com/nih13/dbeedb
 
-go 1.23.4
+go 1.23
 
 require (
 	github.com/bytedance/sonic v1.13.2 // indirect

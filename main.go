@@ -1,20 +1,29 @@
 package main
 
 import (
-	"net/http"
+	"fmt"
 
-	"github.com/gin-gonic/gin"
+	"github.com/nih13/dbeedb/pkg/core"
 )
 
+// func main() {
+// 	r := gin.Default()
+
+// 	// Define a route for the root path
+// 	r.GET("/", func(c *gin.Context) {
+// 		c.String(http.StatusOK, "Hello, Gin!")
+
+// 	})
+
+// 	// Start the server
+// 	r.Run(":8080")
+// }
+
 func main() {
-	r := gin.Default()
+	fruits := core.New()
+	fruits.Set("a", "apple")
+	fruits.Set("b", "mango")
+	fmt.Println(fruits.Get("b"))
+	fruits.Print()
 
-	// Define a route for the root path
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello, Gin!")
-
-	})
-
-	// Start the server
-	r.Run(":8080")
 }

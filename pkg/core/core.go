@@ -1,14 +1,17 @@
 package core
 
+import "fmt"
+
 // Database is an interface that defines methods for getting and setting a value.
 
-type Database interface {
-	Get(key string) string
-	Set(key string, value string)
-}
+// type Database interface {
+// 	Get(key string) string
+// 	Set(key string, value string)
+// }
 
 type dbeedb struct {
-	db map[string]string
+	db       map[string]string
+	loglevel string
 }
 
 func (d dbeedb) Get(key string) string {
@@ -19,8 +22,14 @@ func (d dbeedb) Set(key string, value string) {
 	d.db[key] = value
 }
 
-func New() Database {
-	abc := dbeedb{db: map[string]string{}}
-
+func New() dbeedb {
+	abc := dbeedb{db: map[string]string{}, loglevel: "debug"}
 	return abc
 }
+
+func (d dbeedb) Print() {
+
+	fmt.Println(d.db)
+}
+
+//["a":"apple", "b":"mango"]
